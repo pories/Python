@@ -12,7 +12,7 @@ multiline comments
 '''
 # A variable is a place to store values
 # Its name is like a label for that value
-var1 = "Michael"
+#var1 = "Michael"
 #print(var1)
 
 #single or double quotes
@@ -31,10 +31,10 @@ var1 = "Michael"
 #Mathmatical order of operation is pemdas, use () to make things right.
 #A string is a string of characters surrounded by " or '
 #string has escape char of \, and there is no ; at end of line.
-var2 = "\"Michael\"" 
+#var2 = "\"Michael\"" 
 #python uses _ between names in varables as convention.
-multi_line_quote = ''' just
-like everyone else'''
+#multi_line_quote = ''' just
+#like everyone else'''
 #concatenate strings below type 1.
 #new_string = var2 + multi_line_quote
 #print(new_string)
@@ -50,7 +50,7 @@ like everyone else'''
 #list: a list of values and you can manipulate them. Each one will have an
 #index, and it is zero based. Index is its map coordinate or label to find them. 
 #everything will fit in a list, strings, numbers any data type you like..
-grocery_list = ["Potatoes", "Juice", "Bananas", "Meat"]
+#grocery_list = ["Potatoes", "Juice", "Bananas", "Meat"]
 #print("First Item: ", grocery_list[0])
 #Change value of first item
 #grocery_list[0] = "Apples"
@@ -59,83 +59,87 @@ grocery_list = ["Potatoes", "Juice", "Bananas", "Meat"]
 #You can get a subset of the list with [min:up to but not including max]
 #print("List items (zero based) 1-3:", grocery_list[1:3])
 #You can put in other things like a list of lists. 
-other_events = ["Wash car", "Get paid", "Have sex"]
-to_do_list = [other_events, grocery_list]
-print(to_do_list)
+#other_events = ["Wash car", "Get paid", "Have sex"]
+#to_do_list = [other_events, grocery_list]
+#print(to_do_list)
 #lists are boxes inside of boxed.
 #if we wanted 3rd item from list we would select 2nd array, and 2 item in it. Zero based so 1, and 2
-print((to_do_list[1][2]))
+#print((to_do_list[1][2]))
 #you can append list.
-grocery_list.append("Steak")
+#grocery_list.append("Steak")
 #Insert in a specific index.
-grocery_list.insert(1, "Sex lube")
+#grocery_list.insert(1, "Sex lube")
 #remove from a specific index
-grocery_list.remove("Juice")
+#grocery_list.remove("Juice")
 #sort
-grocery_list.sort()
+#grocery_list.sort()
 #reverse
-grocery_list.reverse()
+#grocery_list.reverse()
 #delete item.
-del grocery_list[3]
+#del grocery_list[3]
 #now print off list, and notice that it changed to_do_list
-print(to_do_list)
+#print(to_do_list)
 
 # We can combine lists with a +
-to_do_list = other_events + grocery_list
-print(to_do_list)
+#to_do_list = other_events + grocery_list
+#print(to_do_list)
 
 # Get length of list
-print(len(to_do_list))
+#print(len(to_do_list))
 
-# Get the max item in list
-print(max(to_do_list))
+# Get the max item in list, what ever is highest alphabetically.
+#print(max(to_do_list))
 
-# Get the minimum item in list
-print(min(to_do_list))
+# Get the minimum item in list, or first alphabetically.
+#print(min(to_do_list))
 
 # TUPLES -------------
-# Values in a tuple can't change like lists
-
-pi_tuple = (3, 1, 4, 1, 5, 9)
+# Values in a tuple can't change like lists.
+#Tuples are ordered set of values comma seperated. They are immutable in python, and use () not [].
+#Other than that they are like lists. Used when you have data you don't want easily changed. 
+#If you want to change it, most people change to list, then change, then change back to tuple. Not normally done.
+#pi_tuple = (3, 1, 4, 1, 5, 9)
 
 # Convert tuple into a list
-new_tuple = list(pi_tuple)
+#new_tuple = list(pi_tuple)
 
 # Convert a list into a tuple
 # new_list = tuple(grocery_list)
 
-# tuples also have len(tuple), min(tuple) and max(tuple)
+# tuples also have length: len(tuplevar1), min(tuplevar1) and max(tuplevar1)
+#Notice that you are passing in the tuple's name. Above is just example.
 
 # DICTIONARY or MAP -------------
-# Made up of values with a unique key for each value
-# Similar to lists, but you can't join dicts with a +
+# Made up of values with a unique key for each value. Key value pair.
+# Similar to lists, but you can't join dictionaries like you can list with a +
+#Notice that list is[], tuples is (), and dictionary is {}
 
-super_villains = {'Fiddler' : 'Isaac Bowin',
-                  'Captain Cold' : 'Leonard Snart',
-                  'Weather Wizard' : 'Mark Mardon',
-                  'Mirror Master' : 'Sam Scudder',
-                  'Pied Piper' : 'Thomas Peterson'}
+#super_villains = {'Fiddler' : 'Isaac Bowin',
+#                  'Captain Cold' : 'Leonard Snart',
+#                  'Weather Wizard' : 'Mark Mardon',
+#                  'Mirror Master' : 'Sam Scudder',
+#                  'Pied Piper' : 'Thomas Peterson'}
 
-print(super_villains['Captain Cold'])
+#print(super_villains['Captain Cold'])
 
 # Delete an entry
-del super_villains['Fiddler']
-print(super_villains)
+#del super_villains['Fiddler']
+#print(super_villains)
 
 # Replace a value
-super_villains['Pied Piper'] = 'Hartley Rathaway'
+#super_villains['Pied Piper'] = 'Hartley Rathaway'
 
-# Print the number of items in the dictionary
-print(len(super_villains))
+# Print the number of items in the dictionary, Length
+#print(len(super_villains))
 
-# Get the value for the passed key
-print(super_villains.get("Pied Piper"))
+# Get the value for the passed key, remember this is a key value pair. 
+#print(super_villains.get("Pied Piper"))
 
 # Get a list of dictionary keys
-print(super_villains.keys())
+#print(super_villains.keys())
 
 # Get a list of dictionary values
-print(super_villains.values())
+#print(super_villains.values())
 
 # CONDITIONALS -------------
 # The if, else and elif statements are used to perform different
@@ -146,39 +150,39 @@ print(super_villains.values())
 # White space is used to group blocks of code in Python
 # Use the same number of proceeding spaces for blocks of code
 
-age = 30
-if age > 16 :
-    print('You are old enough to drive')
+#age = 30
+#if age > 16 :
+#    print('You are old enough to drive')
 
 # Use an if statement if you want to execute different code regardless
 # of whether the condition ws met or not
 
-if age > 16 :
-    print('You are old enough to drive')
-else :
-    print('You are not old enough to drive')
+#if age > 16 :
+#    print('You are old enough to drive')
+#else :
+#    print('You are not old enough to drive')
 
 # If you want to check for multiple conditions use elif
 # If the first matches it won't check other conditions that follow
 
-if age >= 21 :
-    print('You are old enough to drive a tractor trailer')
-elif age >= 16:
-    print('You are old enough to drive a car')
-else :
-    print('You are not old enough to drive')
+#if age >= 21 :
+#    print('You are old enough to drive a tractor trailer')
+#elif age >= 16:
+#    print('You are old enough to drive a car')
+#else :
+#    print('You are not old enough to drive')
 
 # You can combine conditions with logical operators
 # Logical Operators : and, or, not
 
-if ((age >= 1) and (age <= 18)):
-    print("You get a birthday party")
-elif (age == 21) or (age >= 65):
-    print("You get a birthday party")
-elif not(age == 30):
-    print("You don't get a birthday party")
-else:
-    print("You get a birthday party yeah")
+#if ((age >= 1) and (age <= 18)):
+#    print("You get a birthday party")
+#elif (age == 21) or (age >= 65):
+#    print("You get a birthday party")
+#elif not(age == 30):
+#    print("You don't get a birthday party")
+#else:
+#    print("You get a birthday party yeah")
 
 # FOR LOOPS -------------
 # Allows you to perform an action a set number of times
