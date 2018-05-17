@@ -463,13 +463,13 @@ class Animal:
 # Polymorphism allows use to refer to objects as their super class
 # and the correct functions are called automatically
 
-class AnimalTesting:
-    def get_type(self, animal):
-        animal.get_type()
+#class AnimalTesting:
+#    def get_type(self, animal):
+#        animal.get_type()
 
-test_animals = AnimalTesting()
+#test_animals = AnimalTesting()
 
-test_animals.get_type(cat)
-test_animals.get_type(spot)
+#test_animals.get_type(cat)
+#test_animals.get_type(spot)
 
-spot.multiple_sounds(4)
+#spot.multiple_sounds(4)
