@@ -461,7 +461,7 @@ class Animal:
 #print(spot.toString())
 
 # Polymorphism allows use to refer to objects as their super class
-# and the correct functions are called automatically
+# and then automaticly have their correct functions called automatically
 
 #class AnimalTesting:
 #    def get_type(self, animal):
