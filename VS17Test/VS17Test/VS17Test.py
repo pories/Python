@@ -175,10 +175,12 @@ multiline comments
 # You can combine conditions with logical operators
 # Logical Operators : and, or, not
 
+#if first one is met, nothing else will be checked.
 #if ((age >= 1) and (age <= 18)):
 #    print("You get a birthday party")
 #elif (age == 21) or (age >= 65):
 #    print("You get a birthday party")
+#notice that elif not(stuff) does the opposite of what ever. 
 #elif not(age == 30):
 #    print("You don't get a birthday party")
 #else:
@@ -186,156 +188,173 @@ multiline comments
 
 # FOR LOOPS -------------
 # Allows you to perform an action a set number of times
-# Range performs the action 10 times 0 - 9
-for x in range(0, 10):
-    print(x , ' ', end="")
+# Range performs the action 10 times 0 - 9, not to 10.
+#for x in range(0, 10):
+#    print(x , ' ', end="")
 
-print('\n')
+#print('\n')
 
 # You can use for loops to cycle through a list
-grocery_list = ['Juice', 'Tomatoes', 'Potatoes', 'Bananas']
+#grocery_list = ['Juice', 'Tomatoes', 'Potatoes', 'Bananas']
 
-for y in grocery_list:
-    print(y)
 
-# You can also define a list of numbers to cycle through
-for x in [2,4,6,8,10]:
-    print(x)
+#for y in grocery_list:
+#    print(y)
+
+## You can also define a list of numbers to cycle through
+#for x in [2,4,6,8,10]:
+#    print(x)
 
 # You can double up for loops to cycle through lists
-num_list =[[1,2,3],[10,20,30],[100,200,300]];
+#num_list =[[1,2,3],[10,20,30],[100,200,300]];
 
-for x in range(0,3):
-    for y in range(0,3):
-        print(num_list[x][y])
+#for x in range(0,3):
+#    for y in range(0,3):
+#        print(num_list[x][y])
 
 # WHILE LOOPS -------------
 # While loops are used when you don't know ahead of time how many
 # times you'll have to loop
+#remember we had to import the random speciality function. 
 random_num = random.randrange(0,100)
 
-while (random_num != 15):
-    print(random_num)
-    random_num = random.randrange(0,100)
+#this will cycle through til condition is met. Will go til it is not = 15.
+#while (random_num != 15):
+#    print(random_num)
+#    random_num = random.randrange(0,100)
 
 # An iterator for a while loop is defined before the loop
-i = 0;
-while (i <= 20):
-    if(i%2 == 0):
-        print(i)
-    elif(i == 9):
-        # Forces the loop to end all together
-        break
-    else:
-        # Shorthand for i = i + 1
-        i += 1
-        # Skips to the next iteration of the loop
-        continue
+#i = 0;
+#while (i <= 20):
+#    if(i%2 == 0):
+#        print(i)
+#    elif(i == 9):
+#        # Forces the loop to end all together
+#        break
+#    else:
+#        # Shorthand for i = i + 1
+#        i += 1
+#        # Skips to the next iteration of the loop
+#        continue
 
-    i += 1
+#    i += 1
 
 # FUNCTIONS -------------
 # Functions allow you to reuse and write readable code
 # Type def (define), function name and parameters it receives
 # return is used to return something to the caller of the function
-def addNumbers(fNum, sNum):
-    sumNum = fNum + sNum
-    return sumNum
+# Same as a method but method is in class, function is by itself. 
+# def function name(paramters it will recieve.)
+# actual function, 
+# retrun varable name. 
+#def addNumbers(fNum, sNum):
+#    sumNum = fNum + sNum
+#    return sumNum
+#sumNum is not avalible outside of function, it is out of scope. 
 
-print(addNumbers(1, 4))
+#print(addNumbers(1, 4))
+
+#you can make it a string and it will work in the same way.
+#myaddnumberstring = addNumbers(1, 4)
 
 # Can't get the value of rNum because it was created in a function
 # It is said to be out of scope
 # print(sumNum)
 
 # If you define a variable outside of the function it works every place
-newNum = 0;
-def subNumbers(fNum, sNum):
-    newNum = fNum - sNum
-    return newNum
+#newNum = 0;
+#def subNumbers(fNum, sNum):
+#    newNum = fNum - sNum
+#    return newNum
 
-print(subNumbers(1, 4))
+#print(subNumbers(1, 4))
 
 # USER INPUT -------------
-print('What is your name?')
+#print('What is your name?')
 
-# Stores everything typed up until ENTER
-name = sys.stdin.readline()
+# Stores everything typed up until ENTER. Notice that sys is being used. 
+#standardin
+#name = sys.stdin.readline()
 
-print('Hello', name)
+#print('Hello', name)
 
 # STRINGS -------------
 # A string is a series of characters surrounded by ' or "
-long_string = "I'll catch you if you fall - The Floor"
+#long_string = "I'll catch you if you fall - The Floor"
 
 # Retrieve the first 4 characters
-print(long_string[0:4])
+#print(long_string[0:4])
 
 # Get the last 5 characters
-print(long_string[-5:])
+#print(long_string[-5:])
 
 # Everything up to the last 5 characters
-print(long_string[:-5])
+#print(long_string[:-5])
 
 # Concatenate part of a string to another
-print(long_string[:4] + " be there")
+#print(long_string[:4] + " be there")
 
-# String formatting
-print("%c is my %s letter and my number %d number is %.5f" % ('X', 'favorite', 1, .14))
+# String formatting, %c is a charater, %s is string, %d is signed integer and .5f is floating with at least 5 decimal places. Why is las % there?  
+#print("%c is my %s letter and my number %d number is %.5f" % ('X', 'favorite', 1, .14))
 
 # Capitalizes the first letter
-print(long_string.capitalize())
+#print(long_string.capitalize())
 
 # Returns the index of the start of the string
-# case sensitive
-print(long_string.find("Floor"))
+# case sensitive, has to be exactly the same. 
+#print(long_string.find("Floor"))
 
-# Returns true if all characters are letters ' isn't a letter
-print(long_string.isalpha())
+# Returns true, if all characters are all letters. (' isn't a letter)
+#print(long_string.isalpha())
 
 # Returns true if all characters are numbers
-print(long_string.isalnum())
+#print(long_string.isalnum())
 
 # Returns the string length
-print(len(long_string))
+#print(len(long_string))
 
 # Replace the first word with the second (Add a number to replace more)
-print(long_string.replace("Floor", "Ground"))
+#print(long_string.replace("Floor", "Ground"))
 
 # Remove white space from front and end
-print(long_string.strip())
+#print(long_string.strip())
 
-# Split a string into a list based on the delimiter you provide
-quote_list = long_string.split(" ")
-print(quote_list)
+# Split a string into a list based on the delimiter you provide. In this case a space.
+#quote_list = long_string.split(" ")
+#print(quote_list)
 
-# FILE I/O -------------
+# FILE I/O -------------Input Output. 
 
 # Overwrite or create a file for writing
-test_file = open("test.txt", "wb")
+#not sure what he means by sending wb as command. 
+#test_file = open("test.txt", "wb")
+
+
+#Use ab+ to read and append to file. It also opens or create the file. 
 
 # Get the file mode used
-print(test_file.mode)
+#print(test_file.mode)
 
 # Get the files name
-print(test_file.name)
+#print(test_file.name)
 
 # Write text to a file with a newline
-test_file.write(bytes("Write me to the file\n", 'UTF-8'))
+#test_file.write(bytes("Write me to the file\n", 'UTF-8'))
 
 # Close the file
-test_file.close()
+#test_file.close()
 
 # Opens a file for reading and writing
-test_file = open("test.txt", "r+")
+#test_file = open("test.txt", "r+")
 
 # Read text from the file
-text_in_file = test_file.read()
+#text_in_file = test_file.read()
 
-print(text_in_file)
+#print(text_in_file)
 
-# Delete the file
-os.remove("test.txt")
+# Delete the file. 
+#This is where OS module comes in. 
+#os.remove("test.txt")
 
 # CLASSES AND OBJECTS -------------
 # The concept of OOP allows us to model real world things using code
@@ -345,53 +364,60 @@ os.remove("test.txt")
 class Animal:
     # None signifies the lack of a value
     # You can make a variable private by starting it with __
-    __name = None
-    __height = None
-    __weight = None
-    __sound = None
+    #none is lack of a value, or you can use "" (empty quotes.)
+    #two _ means that these variables are private. 
+    #__name = None
+    #__height = None
+    #__weight = None
+    #__sound = None
 
     # The constructor is called to set up or initialize an object
     # self allows an object to refer to itself inside of the class
+    # Has 2 underscores and initilize, then 2 more undersocres.
+    # Remember that they left side of equal sign is what they passed in.  
     def __init__(self, name, height, weight, sound):
         self.__name = name
         self.__height = height
         self.__weight = weight
         self.__sound = sound
 
-    def set_name(self, name):
-        self.__name = name
+        #this is setter, and set name self allows object to refer to it self. Asks if name is valid and if so it will set it. 
+    #def set_name(self, name):
+    #    self.__name = name
 
-    def set_height(self, height):
-        self.__height = height
+    #def set_height(self, height):
+    #    self.__height = height
 
-    def set_weight(self, height):
-        self.__height = height
+    #def set_weight(self, height):
+    #    self.__height = height
 
-    def set_sound(self, sound):
-        self.__sound = sound
+    #def set_sound(self, sound):
+    #    self.__sound = sound
 
-    def get_name(self):
-        return self.__name
+    #def get_name(self):
+    #    return self.__name
 
-    def get_height(self):
-        return str(self.__height)
+    #def get_height(self):
+    #    return str(self.__height)
 
-    def get_weight(self):
-        return str(self.__weight)
+    #def get_weight(self):
+    #    return str(self.__weight)
 
-    def get_sound(self):
-        return self.__sound
+    #def get_sound(self):
+    #    return self.__sound
 
-    def get_type(self):
-        print("Animal")
+    #def get_type(self):
+    #    print("Animal")
 
-    def toString(self):
-        return "{} is {} cm tall and {} kilograms and says {}".format(self.__name, self.__height, self.__weight, self.__sound)
+        #{} is a place holder to put information in a location.
+        #bc we are inside of class we don't need to use getters and setters to refere to the values in these variables.   
+    #def toString(self):
+    #    return "{} is {} cm tall and {} kilograms and says {}".format(self.__name, self.__height, self.__weight, self.__sound)
 
 # How to create a Animal object
-cat = Animal('Whiskers', 33, 10, 'Meow')
+#cat = Animal('Whiskers', 33, 10, 'Meow')
 
-print(cat.toString())
+#print(cat.toString())
 
 # You can't access this value directly because it is private
 #print(cat.__name)
@@ -399,40 +425,40 @@ print(cat.toString())
 # INHERITANCE -------------
 # You can inherit all of the variables and methods from another class
 
-class Dog(Animal):
-    __owner = None
+#class Dog(Animal):
+#    __owner = None
 
-    def __init__(self, name, height, weight, sound, owner):
-        self.__owner = owner
-        self.__animal_type = None
+#    def __init__(self, name, height, weight, sound, owner):
+#        self.__owner = owner
+#        self.__animal_type = None
 
-        # How to call the super class constructor
-        super(Dog, self).__init__(name, height, weight, sound)
+        # How to call the super class constructor which is animal from above.
+    #    super(Dog, self).__init__(name, height, weight, sound)
 
-    def set_owner(self, owner):
-        self.__owner = owner
+    #def set_owner(self, owner):
+    #    self.__owner = owner
 
-    def get_owner(self):
-        return self.__owner
+    #def get_owner(self):
+    #    return self.__owner
 
-    def get_type(self):
-        print ("Dog")
+    #def get_type(self):
+    #    print ("Dog")
 
     # We can overwrite functions in the super class
-    def toString(self):
-        return "{} is {} cm tall and {} kilograms and says {}. His owner is {}".format(self.get_name(), self.get_height(), self.get_weight(), self.get_sound(), self.__owner)
+    #def toString(self):
+    #    return "{} is {} cm tall and {} kilograms and says {}. His owner is {}".format(self.get_name(), self.get_height(), self.get_weight(), self.get_sound(), self.__owner)
 
     # You don't have to require attributes to be sent
-    # This allows for method overloading
-    def multiple_sounds(self, how_many=None):
-        if how_many is None:
-            print(self.get_sound)
-        else:
-            print(self.get_sound() * how_many)
+    # This allows for method overloading. Method overloading allows different tasks depending on what is passed in. 
+#    def multiple_sounds(self, how_many=None):
+#        if how_many is None:
+#            print(self.get_sound)
+#        else:
+#            print(self.get_sound() * how_many)
 
-spot = Dog("Spot", 53, 27, "Ruff", "Derek")
+#spot = Dog("Spot", 53, 27, "Ruff", "Derek")
 
-print(spot.toString())
+#print(spot.toString())
 
 # Polymorphism allows use to refer to objects as their super class
 # and the correct functions are called automatically
